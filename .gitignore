@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+
+# 凭据兜底：绝不允许私钥/OCI 配置进版本库（哪怕被误放到项目目录）
+*.pem
+config
+oci_api_key*

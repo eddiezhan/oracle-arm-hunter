@@ -1,0 +1,10 @@
+#!/bin/bash
+# 双击入口：把真正的脚本交给终端打开。
+# 少数机器上 Terminal.app 双击 .command 会停在空白 login 窗口，
+# 所以先试 Warp（装了就用），找不到再退回系统默认的 Terminal。
+HERE="$(cd "$(dirname "$0")/../../.." && pwd)"
+SCRIPT="$HERE/安装.command"
+for term in Warp Terminal; do
+  if open -a "$term" "$SCRIPT" 2>/dev/null; then exit 0; fi
+done
+open "$SCRIPT"
